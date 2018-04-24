@@ -25,19 +25,22 @@ function newStage(){
 
 boxes.forEach((el, index)=>{
   el.addEventListener('click', ()=>{
+    el.classList.add('large');
   if (correctAnswer === index) {
-    alert("잘햇어용");
     document.querySelector('.modal.right').classList.add('show');
     score++;
   } else {
-    alert("땡!!");
     score = 0;
   }
   document.querySelector(".score").textContent = score;
-  newStage();
+  // newStage();
 })
 })
 document.querySelector('.modal.right .close').addEventListener('click', () =>{
+  newStage();
+  boxes.forEach(el =>{
+    el.classList.remove('large');
+  })
   document.querySelector('.modal.right').classList.remove('show');
 });
 newStage();
