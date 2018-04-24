@@ -1,0 +1,15 @@
+.box {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 5px;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.show {
+    display: block;
+}
