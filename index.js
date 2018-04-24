@@ -13,7 +13,7 @@ const boxes = document.querySelectorAll('.box');
 
 let correctAnswer;
 let score = 0;
-document.querySelector('.score').textContent = score;
+document.querySelector('.score').textContent = 'SCORE: ' + score;
 function newStage(){
   const colorCodes = [randomColorCode(), randomColorCode(), randomColorCode()]
   boxes.forEach((el, index) => {
@@ -23,6 +23,8 @@ function newStage(){
   colorCodeEl.textContent = colorCodes[correctAnswer];
 }
 
+
+
 boxes.forEach((el, index)=>{
   el.addEventListener('click', ()=>{
     el.classList.add('large');
@@ -30,12 +32,18 @@ boxes.forEach((el, index)=>{
     document.querySelector('.modal.right').classList.add('show');
     score++;
   } else {
+    document.querySelector(".modal.wrong").classList.add("show");
+     document.querySelector(".score2").textContent = "SCORE: " + score;
     score = 0;
   }
-  document.querySelector(".score").textContent = score;
+  document.querySelector(".score").textContent = 'SCORE: ' + score;
   // newStage();
 })
 })
+
+
+
+
 document.querySelector('.modal.right .close').addEventListener('click', () =>{
   newStage();
   boxes.forEach(el =>{
@@ -43,4 +51,12 @@ document.querySelector('.modal.right .close').addEventListener('click', () =>{
   })
   document.querySelector('.modal.right').classList.remove('show');
 });
+document.querySelector(".modal.wrong .close").addEventListener("click", () => {
+  newStage();
+  boxes.forEach(el => {
+    el.classList.remove("large");
+  });
+  document.querySelector(".modal.wrong").classList.remove("show");
+});
+
 newStage();

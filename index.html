@@ -10,14 +10,34 @@
 </head>
 
 <body>
-    <div class="color-code"></div>
-    <div class="score"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="modal right">
-        THAT"S RIGHT!
-        <button class="close">NEXT</button>
+    <div class="header">
+        <h1>
+            THE GREAT<br>
+            <span>RGB</span>
+            <br>GUESSINGCHALLENGE
+        </h1>
+    </div>
+    <div class="game">
+        <div class="score"></div>
+        <div class="color-code"></div>
+        <div class="boxes">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="good">
+            <div class="modal right">
+                <span>THAT'S RIGHT!</span><br>
+                <button class="close">NEXT</button>
+            </div>
+        </div>
+        <div class="bad">
+            <div class="modal wrong">
+                <span>THAT'S BAD!</span><br>
+                <div class="score2"></div>
+                <button class="close">AGAIN</button>
+            </div>
+        </div>
     </div>
     <script src="./index.js"></script>
 </body>
